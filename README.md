@@ -49,8 +49,10 @@
       *** no app loaded. going in full dynamic mode ***
       
  #### 2.2.1 A：  
+ 
       chdir 为project目录    
       --wsgi-file 对应project下的同名目录，再下面是wsgi.py,否则系统无法import
+      重新reload uwsgi
       
 ## 3. nginx
 ### nginx 性能、性能、性能,apache 稳定、稳定、稳定
