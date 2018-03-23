@@ -29,3 +29,4 @@ class User(models.Model):
     city = models.CharField(max_length=150, db_index=True)
     province = models.CharField(max_length=150, db_index=True)
     country = models.CharField(max_length=150, db_index=True)
+    lastLogin = models.DateTimeField(auto_now=True)
