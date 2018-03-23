@@ -11,3 +11,21 @@ class CookBooks(models.Model):
     desc = models.TextField()
     price = models.IntegerField(db_index=True)
     label =  models.CharField(max_length=150, blank=True, null=True, db_index=True)
+
+class User(models.Model):
+    UNKNOWN ,BOY, GIRL = range(0, 3)
+    GENDER_CHOICES =(
+        (UNKNOWN, 'unknown'),
+        (BOY, 'boy'),
+        (GIRL, 'girl')
+    )
+
+    nickName = models.CharField(max_length=150, db_index=True)
+    avatarUrl = models.URLField(null=True, blank=True)
+    gender = models.CharField(
+        max_length=2,
+        choices=GENDER_CHOICES
+    )
+    city = models.CharField(max_length=150, db_index=True)
+    province = models.CharField(max_length=150, db_index=True)
+    country = models.CharField(max_length=150, db_index=True)
