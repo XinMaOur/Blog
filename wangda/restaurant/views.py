@@ -32,6 +32,19 @@ def CookBookView(request, **kargs):
     return HttpResponse(json.dumps(data), content_type="application/json")
 
 
+# 登录
+def LoginView(request, **kargs):  
+    token = {}
+    cook = get_object_or_404(CookBooks, pk=kargs['pk'])
+    # data = serializer(cook_list, output_type='json')
+    #return data
+    data['name'] = cook.name
+    data['desc'] = cook.desc
+    data['price'] = cook.price
+    data['label'] = cook.label
+   
+    return HttpResponse(json.dumps(data), content_type="application/json")
+
 
 
 
